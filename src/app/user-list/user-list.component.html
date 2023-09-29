@@ -1,0 +1,25 @@
+<h2>User List</h2>
+<table>
+  <tr>
+    <th>Count</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Option</th>
+  </tr>
+  <tr *ngFor="let u of users; let i = index">
+    <td>
+      <span class="user_count">{{i + 1}}</span>
+    </td>
+    <td>
+      <span class="user_firstName">{{u.firstName}}</span>&nbsp;&nbsp;
+    </td>
+    <td>
+      <span class="user_lastName">{{u.lastName}}</span>
+    </td>
+    <td>
+      <a [routerLink]="['users',u.id]">
+        <span>Detail</span>
+      </a>
+    </td>
+  </tr>
+</table>

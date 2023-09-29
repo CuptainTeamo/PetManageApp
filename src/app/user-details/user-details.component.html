@@ -1,0 +1,40 @@
+<h2>User Information</h2>
+<ng-container *ngIf="user">
+  <p>
+    <label class="group_label">First Name:</label>
+    <span class="output">{{user.firstName}}</span>
+  </p>
+  <p>
+    <label class="group_label">Last Name:</label>
+    <span class="output">   {{user.lastName}}</span>
+  </p>
+  <p>
+    <label class="group_label">Number of pets:</label>
+    <span class="output">{{user.petCount}}</span>
+  </p>
+  <table>
+    <tr>
+      <th>Count</th>
+      <th>Pet Name</th>
+      <th>Pet Kind</th>
+      <th>Pet Age</th>
+    </tr>
+    <tr *ngFor="let p of pets; let i = index">
+      <td>
+        <span class="pet_count">{{i+1}}</span>
+      </td>
+      <td>
+        <span class="pet_name">{{p.petName}}</span>&nbsp;&nbsp;
+      </td>
+      <td>
+        <span class="pet_kind">{{p.petKind}}</span>
+      </td>
+      <td>
+        <span class="pet_age">{{p.petAge}}</span>
+      </td>
+    </tr>
+  </table>
+  <a [routerLink]="['']">
+    <span>Back to User List</span>
+  </a>
+</ng-container>
